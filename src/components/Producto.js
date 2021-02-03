@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 // Redux
@@ -44,7 +44,7 @@ const Producto = ({producto}) => {
   return ( 
     <tr>
       <td>{nombre}</td>
-      <td><span className='font-weight-bold'>{precio} €</span></td>
+      <td><span className='font-weight-bold'>{precio}€</span></td>
       <td className='acciones'>
         <button 
           type='button'

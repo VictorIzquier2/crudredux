@@ -33,7 +33,7 @@ const EditarProducto = () => {
     });
   }
   
-  const {nombre, id, precio} = producto;
+  const {nombre, precio} = producto;
 
   const submitEditarProducto = e => {
     e.preventDefault();

@@ -9,11 +9,13 @@ import {obtenerProductosAction} from '../actions/productoActions';
 const Productos = () => {
 
   const dispatch = useDispatch();
-
+  
   useEffect(()=>{
     // Consultar la api 
     const cargarProductos = () => dispatch(obtenerProductosAction());
     cargarProductos();
+
+    // eslint-disable-next-line
   }, []);
 
   // Obtener el state 
@@ -35,14 +37,24 @@ const Productos = () => {
           </tr>
         </thead>
         <tbody>
-          {productos.length === 0 ? 'No hay productos' : (
-            productos.map(producto => (
-              <Producto
-                key={producto.id}
-                producto={producto}
-              />
-            ))
-          )}
+          {productos.length === 0 ?
+            (
+              <tr>
+                <td>
+                  <p>No hay productos</p> 
+                </td>
+              </tr>
+            )
+          : 
+            (
+              productos.map(producto => (
+                <Producto
+                  key={producto.id}
+                  producto={producto}
+                />
+              ))
+            )
+          }
         </tbody>
       </table>
 
